@@ -6,10 +6,11 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Newtonsoft.Json;
+using Microsoft.Azure.Services.AppAuthentication;
+using Microsoft.Azure.KeyVault;
 
 namespace Company.Function
-{
-    public static class StravaHttpTrigger
+{    public static class StravaHttpTrigger
     {
         [FunctionName("StravaHttpTrigger")]
         public static IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]HttpRequest req, TraceWriter log)
